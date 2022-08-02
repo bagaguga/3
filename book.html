@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Книги наши друзья!</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<style>
+			#book {
+				position: absolute;
+			}
+      body {
+				background: url(img/fon.webp);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/book.webp" alt="book" id="book" />
+		</div>
+		<script>
+			let kvadroImg = document.getElementById("book");
+			let step = 0;
+			let flag = true;
+			function animation() {
+				if (window.innerWidth - 1000 > step && flag) {
+					book.style.transform = "scaleX(1)";
+					step += 1;
+				} else {
+					book.style.transform = "scaleX(-1)";
+					step -= 1;
+					flag = step == 0 ? true : false;
+				}
+				book.style.left = step + "px";
+			}
+			setInterval(animation, 1);
+		</script>
+	</body>
+</html>
